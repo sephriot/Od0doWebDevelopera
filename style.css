@@ -1,0 +1,26 @@
+body {
+    color: red;
+}
+
+.c1 {
+    text-decoration: underline;
+    font-size: 30px !important;
+}
+
+.c2 {
+    color: blue;
+    font-size: 20px;
+}
+
+#header {
+    font-weight: bold;
+}
+
+p.c2 {
+    color: green;
+}
+
+div#header {
+    margin-left: 30px;
+}
+
