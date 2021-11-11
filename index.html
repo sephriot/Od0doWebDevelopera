@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <title>Kurs WebDevelopera</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="index.js" async></script>
 </head>
-<body>
+<body onload="onLoadCallback(1, 2)">
     <div class="c1 c2" id="header">
         Hello world!
     </div>
@@ -13,8 +14,16 @@
         Hello world from paragraph! <br />
         Hello world 2!
     </p>
-    <p>
+    <p id="paragraph2">
         Hello world from 2nd paragraph!
     </p>
+    <div>
+        <div>1</div>
+        <div>2</div>
+    </div>
+    <div>
+        <div>3</div>
+        <div>4</div>
+    </div>
 </body>
 </html>
