@@ -1,19 +1,43 @@
-async function onLoadCallback(x, y) {
-    var container = document.getElementById("header")
-    setInterval(() => {
-        container.innerHTML = new Date().toLocaleString("pl-PL")
-    }, 1000)
+console.log(document.getElementsByClassName("col"))
 
-    let p1 = document.getElementById("paragraph1")
-    let p2 = document.getElementById("paragraph2")
+const X = '<div class="game-symbol noselect">X</div>'
+const O = '<div class="game-symbol noselect">O</div>'
+let hits = 0;
 
-    fetch("https://ifconfig.me/all.json")
-        .then(res => res.json())
-        .then((res) => {
-            p1.innerHTML = res.ip_addr
-        })
+function nextElement() {
+    if (hits % 2) {
+        return O;
+    }
+    return X;
+}
 
-    const rawResponse = await fetch("https://ifconfig.me/all.json")
-    const jsonResponse = await rawResponse.json()
-    p2.innerHTML = jsonResponse.ip_addr;
+function markField(field) {
+    hits++;
+    field.innerHTML = nextElement()
+    console.log(field)
+    checkIfWon()
+}
+
+function getChar(elements, index) {
+    return elements[index].children[0].innerHTML
+}
+
+function checkIfWon() {
+    const elements = document.getElementsByClassName("col");
+    for (let i = 0; i < 3; i++) {
+        if (getChar(elements, 3 * i) === getChar(elements, 3 * i + 1) &&
+            getChar(elements, 3 * i + 1) === getChar(elements, 3 * i + 2)) {
+            return alert(getChar(elements, 3 * i) + " wygrał w linii " + i);
+        }
+        if (getChar(elements, i) === getChar(elements, i + 3) &&
+            getChar(elements, i + 3) === getChar(elements, i + 6)) {
+            return alert(getChar(elements, i) + " wygrał w kolumnie " + i);
+        }
+
+        if((getChar(elements, 0) === getChar(elements, 4) && getChar(elements, 4) === getChar(elements, 8)) ||
+            getChar(elements, 3) === getChar(elements, 4) && getChar(elements, 4) === getChar(elements, 6)) {
+            return alert(getChar(elements, 4) + " wygrał na skos");
+        }
+
+    }
 }

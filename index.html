@@ -6,24 +6,41 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="index.js" async></script>
 </head>
-<body onload="onLoadCallback(1, 2)">
-    <div class="c1 c2" id="header">
-        Hello world!
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col" id="1,1" onclick="markField(this)">
+            <div class="game-symbol">X</div>
+        </div>
+        <div class="col border-vertical" id="1,2" onclick="markField(this)">
+            <div class="game-symbol">O</div>
+        </div>
+        <div class="col" id="1,3" onclick="markField(this)">
+            <div class="game-symbol">X</div>
+        </div>
     </div>
-    <p class="c2" id="paragraph1">
-        Hello world from paragraph! <br />
-        Hello world 2!
-    </p>
-    <p id="paragraph2">
-        Hello world from 2nd paragraph!
-    </p>
-    <div>
-        <div>1</div>
-        <div>2</div>
+    <div class="row border-horizontal">
+        <div class="col" id="2,1" onclick="markField(this)">
+            <div class="game-symbol">O</div>
+        </div>
+        <div class="col border-vertical" id="2,2" onclick="markField(this)">
+            <div class="game-symbol">X</div>
+        </div>
+        <div class="col" id="2,3" onclick="markField(this)">
+            <div class="game-symbol">O</div>
+        </div>
     </div>
-    <div>
-        <div>3</div>
-        <div>4</div>
+    <div class="row">
+        <div class="col" id="3,1" onclick="markField(this)">
+            <div class="game-symbol">X</div>
+        </div>
+        <div class="col border-vertical" id="3,2" onclick="markField(this)">
+            <div class="game-symbol">O</div>
+        </div>
+        <div class="col" id="3,3" onclick="markField(this)">
+            <div class="game-symbol">X</div>
+        </div>
     </div>
+</div>
 </body>
 </html>

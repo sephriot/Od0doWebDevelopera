@@ -1,26 +1,56 @@
 body {
-    color: red;
+    height: 100vh;
 }
 
-.c1 {
-    text-decoration: underline;
-    font-size: 30px !important;
+.container {
+    position: relative;
+    top: 25%;
+    left: 25%;
+    height: 50%;
+    width: 50%;
 }
 
-.c2 {
-    color: blue;
-    font-size: 20px;
+.row {
+    height: 33%;
+    width: 100%;
+    display: flex;
 }
 
-#header {
+.col {
+    flex: 1;
+    height: 100%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.border-vertical {
+    border: solid;
+    border-top: none;
+    border-bottom: none;
+}
+
+.border-horizontal {
+    border: solid;
+    border-left: none;
+    border-right: none;
+}
+
+.game-symbol {
     font-weight: bold;
+    font-size: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
 }
 
-p.c2 {
-    color: green;
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
-
-div#header {
-    margin-left: 30px;
-}
-
