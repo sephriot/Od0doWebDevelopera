@@ -1,5 +1,3 @@
-console.log(document.getElementsByClassName("col"))
-
 const X = '<div class="game-symbol noselect">X</div>'
 const O = '<div class="game-symbol noselect">O</div>'
 let hits = 0;
@@ -12,9 +10,8 @@ function nextElement() {
 }
 
 function markField(field) {
-    hits++;
     field.innerHTML = nextElement()
-    console.log(field)
+    hits++;
     checkIfWon()
 }
 
