@@ -35,7 +35,7 @@ function checkIfWon() {
         }
 
         if((getChar(elements, 0) === getChar(elements, 4) && getChar(elements, 4) === getChar(elements, 8)) ||
-            getChar(elements, 3) === getChar(elements, 4) && getChar(elements, 4) === getChar(elements, 6)) {
+            getChar(elements, 2) === getChar(elements, 4) && getChar(elements, 4) === getChar(elements, 6)) {
             return alert(getChar(elements, 4) + " wygrał na skos");
         }
 
