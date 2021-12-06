@@ -16,6 +16,10 @@ body.addEventListener('click', () => {
     gameStarted = true;
 })
 
+function randomColor() {
+    return `rgba(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, 1)`
+}
+
 function generateBlocks() {
     const blockSize = 50;
     const space = 10;
@@ -28,7 +32,7 @@ function generateBlocks() {
             div.style.left = `${space + i * space + i * blockSize}px`
             div.style.width = `${blockSize}px`
             div.style.height = `${blockSize}px`
-            div.style.backgroundColor = "chocolate";
+            div.style.backgroundColor = randomColor();
             div.className = blockClass;
             div.id=`i${i}j${j}`;
             body.appendChild(div)
@@ -103,9 +107,10 @@ function moveBall() {
         ) {
             block.remove()
             ballDirectionY *= -1;
-            gameBlocks = gameBlocks.slice(0, index).concat(gameBlocks.slice(index + 1, gameBlocks.length))
+            gameBlocks = gameBlocks.slice(0, index).concat(gameBlocks.slice(index + 1))
         }
     })
+    console.log(gameBlocks.length)
     if(gameBlocks.length === 0) {
         gameOver(true);
     }
