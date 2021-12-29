@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=sephcode
+      - MYSQL_USER=sephcode
+      - MYSQL_PASSWORD=sephcode
+    ports:
+      - 13306:3306
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
